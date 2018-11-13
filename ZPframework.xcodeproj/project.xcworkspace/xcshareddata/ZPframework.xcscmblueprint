@@ -1,0 +1,25 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "4bcbf4e6-bf91-40eb-8841-d44c396dc439++8259",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "4bcbf4e6-bf91-40eb-8841-d44c396dc439++8259" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "4bcbf4e6-bf91-40eb-8841-d44c396dc439++8259" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "D5DCD669-AA26-40F6-AC23-1F90DC28F246",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "4bcbf4e6-bf91-40eb-8841-d44c396dc439++8259" : "ZPframework\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "ZPframework",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "ZPframework.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/code.taobao.org\/svn\/shiMao",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "4bcbf4e6-bf91-40eb-8841-d44c396dc439++8259"
+    }
+  ]
+}

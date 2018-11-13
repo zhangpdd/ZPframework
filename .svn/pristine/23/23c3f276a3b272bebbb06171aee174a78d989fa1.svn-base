@@ -1,0 +1,87 @@
+//
+//  ZPTabBarController.m
+//  ZPframework
+//
+//  Created by 张鹏 on 16/9/26.
+//  Copyright © 2016年 zhangPeng. All rights reserved.
+//
+
+#import "ZPTabBarController.h"
+#import "ZPNavigationViewController.h"
+#import "Config.h"
+#import "TestViewController.h"
+@interface ZPTabBarController ()
+
+@end
+
+@implementation ZPTabBarController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    // 创建子控制器
+    TestViewController *home = [[TestViewController alloc]init];
+    [self addChildVC:home title:@"主页" norImage:@"zhuye" selImage:@"zhuye_pre"];
+    
+//
+//    ShoppingCartViewController *message = [[ShoppingCartViewController alloc]init];
+//    [self addChildVC:message title:[NSString stringWithFormat:@"%@",Localized(@"tabbaritem_2")] norImage:@"gouwuche" selImage:@"gouwuche_pre"];
+//    
+//    
+//    AlloOrdersViewController *order = [[AlloOrdersViewController alloc]init];
+//    [self addChildVC:order title:[NSString stringWithFormat:@"%@",Localized(@"tabbaritem_3")] norImage:@"dingdan" selImage:@"dingdan_pre"];
+//    
+//    
+//    NTProfileViewController *profile = [[NTProfileViewController alloc]init];
+//    [self addChildVC:profile title:[NSString stringWithFormat:@"%@",Localized(@"tabbaritem_4")] norImage:@"wode" selImage:@"wode_pre"];
+}
+
+
+
+
+// 添加子控制器
+-(void)addChildVC:(UIViewController *)childVC title:(NSString *)title  norImage:(NSString *)norImage selImage:(NSString *)selImage
+{
+    //子控制器的文字  同时设置tabbar和navigationBar的文字
+    childVC.title = title;
+    
+    //设置默认图片
+    childVC.tabBarItem.image  = [UIImage imageWithName:norImage];
+    //对选中图片进行处理，不渲染，显示原图
+    childVC.tabBarItem.selectedImage=[[UIImage imageNamed:selImage]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+    //设置tabbar下方的默认文字样式，大小， 颜色
+    NSMutableDictionary *textAttrs=[NSMutableDictionary dictionary];
+    textAttrs[NSFontAttributeName]=[UIFont systemFontOfSize:12];
+    textAttrs[NSForegroundColorAttributeName]=[UIColor darkGrayColor];
+    [childVC.tabBarItem setTitleTextAttributes:textAttrs forState:UIControlStateNormal];
+    
+    //设置tabbar下方的选中文字样式，大小， 颜色
+    NSMutableDictionary *selectedTextAtts=[NSMutableDictionary dictionary];
+    selectedTextAtts[NSFontAttributeName]=[UIFont systemFontOfSize:12];
+    selectedTextAtts[NSForegroundColorAttributeName]=[UIColor blackColor];
+    [childVC.tabBarItem setTitleTextAttributes:selectedTextAtts forState:UIControlStateSelected];
+    
+    //先给外面传进来的小控制器 包装 一个导航控制器
+    ZPNavigationViewController *nav = [[ZPNavigationViewController alloc]initWithRootViewController:childVC];
+    
+    //这是背景色
+    [nav.navigationBar setBackgroundImage:[UIImage imageNamed:@"NaviBar"] forBarMetrics:UIBarMetricsDefault];
+    
+    //添加为子控制器
+    [self addChildViewController:nav];
+}
+
+
+
+
+
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+
+
+@end
